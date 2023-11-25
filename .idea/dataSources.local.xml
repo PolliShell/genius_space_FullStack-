@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="WS-232.10203.14">
+    <data-source name="tasks.db" uuid="da7f57af-e693-4786-ab1a-87233a8106fd">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>Polina</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
