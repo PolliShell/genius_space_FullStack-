@@ -33,7 +33,6 @@ p.then((data) => {
         setTimeout(() => {
             data.modified = true;
             resolve(data);
-            // console.log('Data received', backendData);
         }, 2000);
     })
 
