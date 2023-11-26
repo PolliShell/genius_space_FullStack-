@@ -16,7 +16,6 @@ console.log('Request data');
 // },2000);
 //
 
-
 const p = new Promise(function (resolve, reject) {
     setTimeout(() => {
         console.log('Preparing data...');
@@ -38,9 +37,6 @@ p.then((data) => {
         }, 2000);
     })
 
-    // p2.then(clientData=>{
-    //     console.log('Data received',clientData);
-    // })
 }).catch(err => console.log(err))
     .then(clientData => {
         clientData.fromPromise = true;
