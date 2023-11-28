@@ -1,8 +1,8 @@
-const delay = ms => {
-    return new Promise(r => setTimeout(() => r(), ms))
-}
-
- const url = 'https://jsonplaceholder.typicode.com/todos/1';
+// const delay = ms => {
+//     return new Promise(r => setTimeout(() => r(), ms))
+// }
+//
+//  const url = 'https://jsonplaceholder.typicode.com/todos/1';
 //
 // function fetchTodos() {
 //     console.log('Fetch todo started...')
