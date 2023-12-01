@@ -15,14 +15,14 @@ const compressStream = zlib.createGzip();
 //    writeStream.write(chunk);
 // })
 
-const handleError = ()=>{
+const handleError = () => {
     console.log('Error');
     readStream.destroy();
     writeStream.end('Finish with error...');
 }
 
 readStream
-    .on('error',handleError)
+    .on('error', handleError)
     .pipe(compressStream)
     .pipe(writeStream)
-    .on('error',handleError);
+    .on('error', handleError);
