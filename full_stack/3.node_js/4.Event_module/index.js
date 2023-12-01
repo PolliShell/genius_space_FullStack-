@@ -1,0 +1,14 @@
+const EventEmitter = require('events');
+const log = require('./log');
+
+const emitter = new EventEmitter();
+
+emitter.on('some_event',(args)=>{
+    const {id, text}=args;
+    console.log(id,text);
+    console.log(text);
+})
+
+emitter.emit('some_event', {id:1,text:'Event test text!'});
+
+log('User Logged');
