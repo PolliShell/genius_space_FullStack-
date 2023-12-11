@@ -1,0 +1,27 @@
+<!-- changeTask.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+</head>
+<body>
+
+<div id="taskDetail">
+    <h2>Task Detail</h2>
+    <form action="/changeTask/<%= task.id %>" method="post">
+        <label for="taskId">Task ID:</label>
+        <input type="text" id="taskId" name="id" value="<%= task.id %>" readonly>
+        <br>
+        <label for="taskText">Task Text:</label>
+        <input type="text" id="taskText" name="text" value="<%= task.text %>" required>
+        <br>
+        <input type="submit" value="Update Task">
+    </form>
+    <div id="taskContent"></div>
+</div>
+
+</body>
+</html>
