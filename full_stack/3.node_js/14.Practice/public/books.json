@@ -1,0 +1,34 @@
+{
+    "books": [
+        {
+            "title": "1984",
+            "author": "George Orwell",
+            "publication_year": 1949,
+            "genre": "Dystopian fiction"
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "publication_year": 1960,
+            "genre": "Southern Gothic"
+        },
+        {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "publication_year": 1925,
+            "genre": "Historical fiction"
+        },
+        {
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "publication_year": 1937,
+            "genre": "Fantasy"
+        },
+        {
+            "title": "The Catcher in the Rye",
+            "author": "J.D. Salinger",
+            "publication_year": 1951,
+            "genre": "Coming-of-age fiction"
+        }
+    ]
+}
