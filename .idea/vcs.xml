@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/full_stack/node-js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Новая папка/express-mongo-todos" vcs="Git" />
   </component>
 </project>
