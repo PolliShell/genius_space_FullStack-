@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 
 const app = require('./app')
 
-const DB_HOST = "mongodb+srv://polliandfibi:fibi2017@cluster0.qiz7kvy.mongodb.net/books-reader?retryWrites=true&w=majority";
+const {DB_HOST, PORT = 3000} = process.env;
 
-const PORT = 3000;
 mongoose.set('strictQuery', true);
 
 mongoose.connect(DB_HOST)

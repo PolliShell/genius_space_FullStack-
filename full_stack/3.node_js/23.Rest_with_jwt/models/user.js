@@ -2,7 +2,6 @@ const {Schema, model} = require("mongoose");
 const Joi = require("joi");
 
 const {handleMongooseError} = require("../helpers");
-const {func} = require("joi");
 
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -21,14 +20,14 @@ const userSchema = new Schema({
         type: String,
         minlength: 6,
         required: true,
+    },
+    token: {
+        type: String,
+        default: ""
     }
 }, {versionKey: false, timestamps: true});
 
-// userSchema.post("save", handleMongooseError);
-
-// userSchema.methods.setPassword = function (password){
-//     this.password=bcrypt.hashSync(password,bcrypt.genSaltSync(10));
-// }
+userSchema.post("save", handleMongooseError);
 
 const registerSchema = Joi.object({
     name: Joi.string().required(),
