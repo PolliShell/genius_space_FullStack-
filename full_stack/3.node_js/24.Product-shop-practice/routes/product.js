@@ -1,18 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const ctrl = require("../controllers/product");
-const { Product } = require("../models/product");
+const {Product} = require("../models/product");
+
+const {
+    add,
+    getAll,
+    getById,
+    updateById
+} = require("../controllers/product");
+const auth = require("../middlewares/auth");
+
 
 // Get all products
-router.get("/products", ctrl.getAll);
+router.get("/products",auth, getAll);
 
 // Get a product by ID
-router.get("/products/:id", ctrl.getById);
+router.get("/products/:id", getById);
 
 // Add a new product
-router.post("/products", ctrl.add);
+router.post("/products", add);
 
 // Update a product by ID (using PUT instead of POST)
-router.put("/products/:id", ctrl.updateById);
+router.put("/products/:id", updateById);
 
 module.exports = router;

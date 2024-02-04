@@ -4,14 +4,25 @@ const HttpError = require("../helpers/HttpError"); // Import the HttpError funct
 
 const add = async (req, res) => {
     try {
-        const result = await Product.create(req.body);
-        res.status(201).json(result);
+        const { title, price, quantity } = req.body;
+        const product = new Product({ title, price, quantity });
+        const savedProduct = await product.save();
+
+        // Instead of sending the entire saved product, you might want to send a simplified response.
+        // For example, you can send only the product ID and a success message.
+        res.status(201).json({ id: savedProduct._id, message: "Product added successfully" });
     } catch (error) {
         console.error("Error adding product:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
-
+// const add = (req, res) => {
+//     const {title, price, quantity} = req.body;
+//
+//     const task = new Product({title, price, quantity});
+//     task.save()
+//         .catch((error) => handlerError(res, error));
+// }
 
 const getAll = async (req, res) => {
     const result = await Product.find({});
