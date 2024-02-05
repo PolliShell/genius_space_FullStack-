@@ -12,6 +12,10 @@ const productSchema = new mongoose.Schema({
     quantity:{
         type:String,
         required: true
+    },
+    token:{
+        type: String,
+        default: ""
     }
 })
 

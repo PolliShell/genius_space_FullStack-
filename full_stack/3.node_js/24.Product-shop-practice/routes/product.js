@@ -8,6 +8,7 @@ const {
     getById,
     updateById
 } = require("../controllers/product");
+
 const auth = require("../middlewares/auth");
 
 
