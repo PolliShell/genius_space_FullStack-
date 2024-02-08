@@ -19,7 +19,7 @@ router.get("/products",auth, getAll);
 router.get("/products/:id", getById);
 
 // Add a new product
-router.post("/products", add);
+router.post("/products", auth,add);
 
 // Update a product by ID (using PUT instead of POST)
 router.put("/products/:id", updateById);

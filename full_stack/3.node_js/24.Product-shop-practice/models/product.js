@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const { Schema } = require("mongoose");
 const productSchema = new mongoose.Schema({
     title: {
        type:String,
@@ -13,9 +13,10 @@ const productSchema = new mongoose.Schema({
         type:String,
         required: true
     },
-    token:{
-        type: String,
-        default: ""
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+        required: true,
     }
 })
 

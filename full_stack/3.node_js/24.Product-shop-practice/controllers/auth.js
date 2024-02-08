@@ -24,8 +24,10 @@ const login = async (req, res) => {
             const error = new HttpError(401, "Неправильное имя пользователя или пароль");
             return res.status(error.status).json({error: error.message});
         }
-
-        const token = jwt.sign({username: user.username}, accessTokenSecret, {expiresIn: "23h"});
+        const payload = {
+            id: user._id,
+        }
+        const token = jwt.sign(payload, accessTokenSecret, {expiresIn: "23h"});
 
         await User.findByIdAndUpdate(user._id, {token});
         res.json({

@@ -4,11 +4,14 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { accessTokenSecret } = process.env;
 
-const auth = (req, res, next) => {
+const auth = async (req, res, next) => {
     const authHeader = req.headers.authorization;
     const token = authHeader.split(" ")[1];
 
-    jwt.verify(token, accessTokenSecret, (err, user) => {
+    const {id} = jwt.verify(token, accessTokenSecret);
+    const user = await User.findById(id);
+
+    jwt.verify(token, accessTokenSecret, (err) => {
         if (err) {
             return res.sendStatus(403);
         }
