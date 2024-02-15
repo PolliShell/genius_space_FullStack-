@@ -5,9 +5,10 @@ const {User} = require("../models/user");
 const path= require("path");
 const fs = require("fs").promises;
 const {HttpError, ctrlWrapper} = require("../helpers");
-
+const {nanoid}= require("nanoid");
 const {SECRET_KEY} = process.env;
 
+const {sendEmail}= require("../helpers/sendEmail");
 const register = async (req, res) => {
     const {name, email, password} = req.body;
     const user = await User.findOne({email});
@@ -16,13 +17,22 @@ const register = async (req, res) => {
         throw HttpError(409, "Email already in use");
     }
     const avatarURL = gravatar.url(email);
+    const verificationToken = nanoid();
     const hashPassword = await bcrypt.hash(password, 10);
 
-    const newUser = await User.create({name, email, password: hashPassword, avatarURL});
+    const newUser = await User.create({name, email, password: hashPassword, avatarURL,verificationToken});
+
+    const mail={
+        to:email,
+        subject:"Подтверждение email",
+        html:`<a target="_blank" href="http://localhost:3000/api/users/verify/${verificationToken}">Подтвердить email</a>`
+    }
 
     res.status(201).json({
         name,
-        email, avatarURL
+        email,
+        avatarURL,
+        verificationToken
         // email: newUser.email,
         // name: newUser.name,
         // avatarURL: newUser.avatarURL
