@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Protecting the outer rim",
+    "location": "Corvus, Jangala",
+    "speaker": "Jacob Mercer",
+    "type": "free",
+    "time": {
+      "start": "2022-02-17T14:30:00",
+      "end": "2022-02-17T16:30:00"
+    }
+  },
+
+  {
+    "name": "The art of spying",
+    "location": "Barad sector, Asharu",
+    "speaker": "Artemis Tau",
+    "type": "free",
+    "time": {
+      "start": "2022-04-12T18:00:00",
+      "end": "2022-04-12T19:00:00"
+    }
+  },
+
+  {
+    "name": "A smuggler's tale",
+    "location": "Atzlan, Nachiketa",
+    "speaker": "Kai Takeda",
+    "type": "paid",
+    "time": {
+      "start": "2022-06-23T17:00:00",
+      "end": "2022-06-23T17:30:00"
+    }
+  },
+
+  {
+    "name": "Unraveling mysteries of the cosmos",
+    "location": "Stellara Prime, Ursa Major",
+    "speaker": "Dr. Elara Singh",
+    "type": "free",
+    "time": {
+      "start": "2022-08-10T15:00:00",
+      "end": "2022-08-10T16:00:00"
+    }
+  },
+
+  {
+    "name": "Exploring the ancient ruins",
+    "location": "Terra Nova, Avalon",
+    "speaker": "Professor Benjamin Hayes",
+    "type": "free",
+    "time": {
+      "start": "2022-10-05T13:00:00",
+      "end": "2022-10-05T15:00:00"
+    }
+  },
+
+  {
+    "name": "Navigating the quantum realm",
+    "location": "Eidolon, Lyra",
+    "speaker": "Dr. Li Wei",
+    "type": "paid",
+    "time": {
+      "start": "2022-12-18T16:30:00",
+      "end": "2022-12-18T18:30:00"
+    }
+  }
+]

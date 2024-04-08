@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emotion/styled": "^11.11.5",
     "@sendgrid/mail": "^8.1.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
