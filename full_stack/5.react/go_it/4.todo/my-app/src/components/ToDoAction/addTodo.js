@@ -1,3 +1,4 @@
-export const addTodo = (todos, id, setTodos) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+
+export const addTodo = (todos, setTodos, newTodo) => {
+    setTodos([...todos, newTodo]);
 };
