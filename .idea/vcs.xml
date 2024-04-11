@@ -2,7 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/full_stack/5.react/go_it/5.todo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/full_stack/5.react/go_it/5.goit_projects" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/full_stack/node-js" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Новая папка/express-mongo-todos" vcs="Git" />
   </component>

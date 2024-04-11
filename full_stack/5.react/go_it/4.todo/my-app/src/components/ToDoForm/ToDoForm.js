@@ -1,11 +1,11 @@
-// ToDoForm.js
 import React, { useState } from 'react';
+import { formatEventStart } from "../utils/formatEventStart";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export const ToDoForm = ({ onAddTodo }) => {
+export const ToDoForm = ({ onAddTodo, closeModal }) => {
     const [inputs, setInputs] = useState({
         title: '',
         description: '',
-        dueDate: '',
         priority: '',
         completed: ''
     });
@@ -19,37 +19,43 @@ export const ToDoForm = ({ onAddTodo }) => {
         event.preventDefault();
         const newTodo = {
             ...inputs,
+            dueDate: formatEventStart(),
             id: Date.now()
         };
         onAddTodo(newTodo);
+        closeModal();
         setInputs({
             title: '',
             description: '',
-            dueDate: '',
             priority: '',
             completed: ''
         });
     };
 
     return (
-        <div className="container">
+        <div className="container mt-3">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Enter title</label>
-                <input type="text" name="title" value={inputs.title} onChange={handleChange} />
+                <div className="mb-3">
+                    <label htmlFor="title" className="form-label">Enter title</label>
+                    <input type="text" className="form-control" name="title" value={inputs.title} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="description">Enter description</label>
-                <input type="text" name="description" value={inputs.description} onChange={handleChange} />
+                <div className="mb-3">
+                    <label htmlFor="description" className="form-label">Enter description</label>
+                    <input type="text" className="form-control" name="description" value={inputs.description} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="dueDate">Enter dueDate</label>
-                <input type="text" name="dueDate" value={inputs.dueDate} onChange={handleChange} />
+                <div className="mb-3">
+                    <label htmlFor="priority" className="form-label">Enter priority</label>
+                    <input type="text" className="form-control" name="priority" value={inputs.priority} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="priority">Enter priority</label>
-                <input type="text" name="priority" value={inputs.priority} onChange={handleChange} />
+                <div className="mb-3">
+                    <label htmlFor="completed" className="form-label">Enter completed</label>
+                    <input type="text" className="form-control" name="completed" value={inputs.completed} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="completed">Enter completed</label>
-                <input type="text" name="completed" value={inputs.completed} onChange={handleChange} />
-
-                <button type="submit">submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
