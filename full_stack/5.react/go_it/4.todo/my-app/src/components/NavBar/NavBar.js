@@ -1,15 +1,13 @@
-import {ToDoForm} from "../ToDoForm/ToDoForm";
-import {ModalComponent, useModal} from "../utils/modal";
 import {useState} from "react";
 import data from "../../data.json";
 
 export const NavBar = ({ updateTodos }) => {
-    const { modalIsOpen, openModal, closeModal } = useModal();
+    // const { modalIsOpen, openModal, closeModal } = useModal();
 
-    const addTodo = (newTodo) => {
-        updateTodos(prevTodos => [...prevTodos, newTodo]);
-        closeModal();
-    };
+    // const addTodo = (newTodo) => {
+    //     updateTodos(prevTodos => [...prevTodos, newTodo]);
+    //     closeModal();
+    // };
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -32,10 +30,10 @@ export const NavBar = ({ updateTodos }) => {
                     <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success me-2" type="submit">Search</button>
-                        <button className="btn btn-outline-success" type="button" onClick={openModal}>Add todo</button>
-                        <ModalComponent modalIsOpen={modalIsOpen} closeModal={closeModal}>
-                            <ToDoForm onAddTodo={(newTodo) => addTodo(newTodo)} closeModal={closeModal} />
-                        </ModalComponent>
+                        <button className="btn btn-outline-success" type="button" >Add todo</button>
+                        {/*<ModalComponent modalIsOpen={modalIsOpen} closeModal={closeModal}>*/}
+                        {/*    <ToDoForm onAddTodo={(newTodo) => addTodo(newTodo)} closeModal={closeModal} />*/}
+                        {/*</ModalComponent>*/}
                     </form>
                 </div>
             </div>
