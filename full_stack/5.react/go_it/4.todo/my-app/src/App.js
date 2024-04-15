@@ -10,7 +10,7 @@ function App() {
 
     return (
         <div className="App">
-            <NavBar />
+            <NavBar data={todos} setTodos={setTodos} />
             <ToDoBoard data={todos} setTodos={setTodos} />
         </div>
     );

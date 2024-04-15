@@ -35,11 +35,11 @@ export const DueDate = styled.p`
 export const Priority = styled.h3`
   color: ${({ priorityLevel }) => {
     switch (priorityLevel) {
-      case "Высокий":
+      case "High":
         return "red";
-      case "Средний":
+      case "Medium":
         return "orange";
-      case "Низкий":
+      case "Low":
         return "green";
       default:
         return "green";
@@ -60,4 +60,9 @@ export const Completed = styled.p`
     }
 }};
   font-size: 1rem;
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between; /* Распределяем кнопки по краям контейнера */
+  margin-top: 15px; /* Отступ сверху для кнопок */
 `;

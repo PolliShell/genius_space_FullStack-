@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { addTodo } from "../ToDoAction/addTodo";
 import {Button, Form, Modal} from "react-bootstrap";
 
-function ModalWindow({ todos, setTodos }) {
+function AddTodo({ todos, setTodos }) {
     const [show, setShow] = useState(false);
     const [newTodo, setNewTodo] = useState({
         id: todos.length + 1,
@@ -33,7 +33,7 @@ function ModalWindow({ todos, setTodos }) {
             title: '',
             description: '',
             dueDate: '',
-            priority: '',
+            priority: 'Low',
             completed: false
         });
 
@@ -42,7 +42,7 @@ function ModalWindow({ todos, setTodos }) {
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
+               Add task
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -110,4 +110,4 @@ function ModalWindow({ todos, setTodos }) {
     );
 }
 
-export default ModalWindow;
+export default AddTodo;

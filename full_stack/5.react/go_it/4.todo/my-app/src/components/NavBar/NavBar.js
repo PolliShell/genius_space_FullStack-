@@ -1,13 +1,8 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import data from "../../data.json";
+import AddTodo from "../ModalWindow/AddTodo";
 
-export const NavBar = ({ updateTodos }) => {
-    // const { modalIsOpen, openModal, closeModal } = useModal();
-
-    // const addTodo = (newTodo) => {
-    //     updateTodos(prevTodos => [...prevTodos, newTodo]);
-    //     closeModal();
-    // };
+export const NavBar = ({ data, setTodos}) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -30,10 +25,7 @@ export const NavBar = ({ updateTodos }) => {
                     <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success me-2" type="submit">Search</button>
-                        <button className="btn btn-outline-success" type="button" >Add todo</button>
-                        {/*<ModalComponent modalIsOpen={modalIsOpen} closeModal={closeModal}>*/}
-                        {/*    <ToDoForm onAddTodo={(newTodo) => addTodo(newTodo)} closeModal={closeModal} />*/}
-                        {/*</ModalComponent>*/}
+                        <AddTodo todos={data} setTodos={setTodos}/>
                     </form>
                 </div>
             </div>
